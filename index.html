@@ -9,10 +9,9 @@
 
 <style>
 :root{
-  --primary:#009200;
+  --primary:#06ac00;
   --dark:#0a0a0a;
-  --gray:#151515;
-  --light:#f5f5f5;
+  --gray:#141414;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -20,7 +19,7 @@
 body{
   font-family:sans-serif;
   background:var(--dark);
-  color:var(--light);
+  color:#fff;
 }
 
 /* HEADER */
@@ -29,35 +28,59 @@ header{
   top:0;
   width:100%;
   background:#000;
-  padding:15px;
-  border-bottom:2px solid var(--primary);
-  text-align:center;
+  padding:10px 12px;
+  border-bottom:1px solid var(--primary);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 header h1{
-  font-size:20px;
+  font-size:16px;
   color:var(--primary);
-  letter-spacing:3px;
+  letter-spacing:2px;
 }
 
-/* BOTÃO GRANDE */
+/* REDES */
+nav i{
+  font-size:18px;
+  margin-left:10px;
+  transition:0.2s;
+}
+
+nav i:hover{
+  color:var(--primary);
+  transform:scale(1.2);
+}
+
+/* BOTÃO */
 .buy-btn{
-  display:block;
-  width:90%;
-  margin:10px auto 0;
-  padding:14px;
+  position:fixed;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
   background:var(--primary);
   color:#000;
-  font-weight:bold;
+  padding:14px 25px;
   border-radius:30px;
+  font-weight:bold;
   font-size:16px;
   text-decoration:none;
+  box-shadow:0 0 15px var(--primary);
+  animation:pulse 1.5s infinite;
+}
+
+/* ANIMAÇÃO */
+@keyframes pulse{
+  0%{box-shadow:0 0 5px var(--primary);}
+  50%{box-shadow:0 0 20px var(--primary);}
+  100%{box-shadow:0 0 5px var(--primary);}
 }
 
 /* HERO */
 .hero{
-  margin-top:110px;
-  height:40vh;
+  margin-top:55px;
+  height:28vh;
   position:relative;
 }
 
@@ -65,95 +88,74 @@ header h1{
   width:100%;
   height:100%;
   object-fit:cover;
-  filter:brightness(0.5);
+  filter:brightness(0.4);
 }
 
 .hero-text{
   position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  text-align:center;
+  bottom:10px;
+  left:10px;
 }
 
 .hero-text h2{
-  font-size:26px;
+  font-size:18px;
   color:var(--primary);
 }
 
 .hero-text p{
-  font-size:15px;
+  font-size:12px;
 }
 
 /* SEÇÕES */
 section{
-  padding:30px 15px;
-  text-align:center;
+  padding:15px 10px;
 }
 
 h2{
-  font-size:22px;
+  font-size:16px;
   color:var(--primary);
-  margin-bottom:15px;
+  margin-bottom:8px;
 }
 
 p{
-  font-size:15px;
-  color:#ccc;
+  font-size:12px;
+  color:#aaa;
 }
 
-/* CATEGORIAS */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:8px;
 }
 
 .card{
   background:var(--gray);
-  border-radius:10px;
+  border-radius:8px;
   overflow:hidden;
   border:1px solid #222;
+  transition:0.2s;
+}
+
+.card:hover{
+  border-color:var(--primary);
 }
 
 .card img{
   width:100%;
-  height:140px;
+  height:100px;
   object-fit:cover;
 }
 
 .card h3{
-  padding:12px;
-  font-size:16px;
-}
-
-/* FOOTER */
-footer{
-  background:#000;
-  padding:20px;
-  text-align:center;
-  border-top:2px solid var(--primary);
-}
-
-footer i{
-  font-size:28px;
-  margin:0 15px;
-  transition:0.3s;
-}
-
-footer i:hover{
-  color:var(--primary);
-  transform:scale(1.2);
+  font-size:13px;
+  padding:8px;
 }
 
 /* DESKTOP */
 @media(min-width:768px){
   .grid{
     grid-template-columns:repeat(4,1fr);
-  }
-
-  .hero{
-    height:60vh;
   }
 }
 </style>
@@ -162,24 +164,38 @@ footer i:hover{
 <body>
 
 <header>
-  <h1>T STYLE</h1>
+  <h1>T STYLE(teste)</h1>
 
-  <a class="buy-btn" href="https://wa.me/553899999999?text=ola%2C%20aguardo%20o%20atendimento" target="_blank">
-    Comprar agora
+ <nav>
+  <a href="https://maps.google.com/?q=Montes+Claros+MG" target="_blank" class="map-link">
+    <i class="fas fa-location-dot"></i>
   </a>
+
+  <a href="https://wa.me/553899999999" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="https://instagram.com" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://tiktok.com" target="_blank">
+    <i class="fab fa-tiktok"></i>
+  </a>
+</nav>
 </header>
 
 <div class="hero">
   <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
   <div class="hero-text">
-    <h2>Vista sua atitude</h2>
-    <p>Moda urbana moderna</p>
+    <h2>teste</h2>
+    <p>teste</p>
   </div>
 </div>
 
 <section>
-  <h2>Sobre</h2>
-  <p>Marca focada em estilo urbano, com peças modernas e identidade única.</p>
+  <h2>teste</h2>
+  <p>teste</p>
 </section>
 
 <section>
@@ -211,11 +227,9 @@ footer i:hover{
 
 </section>
 
-<footer>
-  <a href="https://wa.me/553899999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-</footer>
+<a class="buy-btn" href="https://wa.me/553899999999?text=ola%2C%20aguardo%20o%20atendimento" target="_blank">
+  Chamar!
+</a>
 
 </body>
 </html>
